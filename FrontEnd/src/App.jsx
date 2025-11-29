@@ -1,0 +1,25 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BookProvider } from "./Context/BookContext";
+
+import HomePage from "./Pages/HomePage";
+import BookListPage from "./Pages/BookListPage";
+import CartPage from "./Pages/CartPage"; 
+import Nav from "./Components/Nav";
+
+
+ function App() {
+  return (
+    <BookProvider>
+      <Router>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/books" element={<BookListPage />} />
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>
+      </Router>
+    </BookProvider>
+  );
+}
+
+export default App;
