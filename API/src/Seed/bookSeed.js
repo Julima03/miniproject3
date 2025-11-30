@@ -23,7 +23,7 @@ let books = [
 
 
 const seedBooks = async () => {
-  await Promise.all(books.map(book => addBook(book)));
+  await Promise.all(books.map(book => addBook(book))); // promisse all return  a single promisses from a list of promisses.
   console.log("📚 Books seeds loaded!");
 };
 

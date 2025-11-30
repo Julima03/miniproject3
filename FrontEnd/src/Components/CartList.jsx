@@ -11,8 +11,8 @@ export default function CartList() {
 
       {cart.length === 0 && <p>Your cart is empty</p>}
 
-      {cart.map((item) => (
-        <CartItem key={item._id} item={item} />
+      {cart.map((item,index) => (
+       <CartItem key={Math.random()} item={item} />
       ))}
     </div>
   );

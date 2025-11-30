@@ -64,7 +64,11 @@ export default function BookItem({ book }) {
           <p>${book.price}</p>
           <p>Category: {book.category}</p>
 
-          <button onClick={() => addToCart(book)}>Add to Cart</button>
+       <button onClick={() => {
+        console.log("Adding ro cart:", book) ;     
+         addToCart(book);
+       }}>   
+       Add to Cart </button>
           <button onClick={() => setEditMode(true)}>Edit</button>
           <button onClick={() => deleteBook(book._id)}>Delete</button>
         </>
