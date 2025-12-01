@@ -1,4 +1,5 @@
 import { createContext, useState, useEffect } from "react";
+import axios from "axios";
 
 export const BookContext = createContext();
 
@@ -6,14 +7,16 @@ export function BookProvider({ children }) {
   const [books, setBooks] = useState([]);
   const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(false);
+  
 
   // Load books from API
  const loadBooks = async () => {
     setLoading(true);
     try {
-      const res = await fetch("/api/books");
-      const data = await res.json();
-      setBooks(data);
+      const res = await axios.get("/api/books");
+      console.log(res)
+    //   const data = await res.json();
+      setBooks(res.data);
     } catch (e) {
       console.error("Failed to load books", e);
     } finally {

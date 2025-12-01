@@ -3,6 +3,7 @@ const Book = require("../Models/booksModel");
 //Create 
 const addBook = async (BookData) => {
   const savedBook = await Book.create(BookData);
+  console.log(savedBook);
   return savedBook;
 };
 

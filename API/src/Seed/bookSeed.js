@@ -1,6 +1,7 @@
-const { addBook } = require("../Services/bookService");
+const { addBook, getAllBooksFromService } = require("../Services/bookService");
 const mongoose = require("mongoose");
 const Book = require("../Models/booksModel");
+
 
 // Lista de livros
 let books = [
@@ -22,9 +23,13 @@ let books = [
 ];
 
 
-const seedBooks = async () => {
-  await Promise.all(books.map(book => addBook(book))); // promisse all return  a single promisses from a list of promisses.
-  console.log("📚 Books seeds loaded!");
+const seedBooks = async () => { 
+    const books = await getAllBooksFromService();
+  
+    if  ( books.length == 0 ){
+  await Promise.all(books.map(book => Book.create(book))); // promisse all return  a single promisses from a list of promisses.
+  console.log("📚 Books seeds loaded!"); 
+}
 };
 
 
