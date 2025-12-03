@@ -56,7 +56,7 @@ body {
 
 /* NavBar */
 nav {
-  background: white;
+  background: rgb(236, 232, 236);
   padding: 18px 40px;
   display: flex;
   justify-content: space-between;
@@ -93,7 +93,7 @@ nav ul li a:hover {
   padding: 30px;
 }
 
-/* Lista de livros */
+
 .book-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -101,7 +101,7 @@ nav ul li a:hover {
   margin-top: 20px;
 }
 
-/* Card do livro */
+
 .book-card {
   background: white;
   padding: 20px;
@@ -166,8 +166,8 @@ nav ul li a:hover {
 .logo {
   width: 80px;          
   height: 80px;
-  border-radius: 50%;   /* deixa totalmente arredondada */
-  object-fit: cover;    /* garante que a imagem não distorce */
+  border-radius: 50%;  
+  object-fit: cover;    
   background: white;
   padding: 5px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);

@@ -11,9 +11,9 @@ export default function Nav() {
 
 
      <ul className="nav-links">
-        <NavLink to="/">Home</NavLink>
-      <NavLink to="/books">Books</NavLink>
-      <NavLink to="/cart">Cart</NavLink>
+       <li> <NavLink to="/">Home</NavLink></li>
+      <li><NavLink to="/books">Books</NavLink></li>
+      <li><NavLink to="/cart">Cart</NavLink></li>
               
       </ul>
     </nav>
