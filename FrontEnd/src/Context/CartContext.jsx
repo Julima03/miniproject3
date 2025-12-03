@@ -9,7 +9,7 @@ export function CartProvider({ children }) {
   // Load cart when start
   useEffect(() => {
     axios
-      .get("http://localhost:5050/api/cart")
+      .get("/api/cart")
       .then((res) => setCart(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -17,7 +17,7 @@ export function CartProvider({ children }) {
   // Add item in cart
   const addToCart = async (book) => {
     try {
-      const res = await axios.post("http://localhost:5050/api/cart/add", {
+      const res = await axios.post("/api/cart/add", {
         book,
       });
 

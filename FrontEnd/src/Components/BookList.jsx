@@ -8,10 +8,10 @@ function BookList() {
   const [searchQuery, setSearchQuery] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("");
 
-  // Pega categorias automaticamente
+  // get random categories.
   const categories = ["", ...new Set(books.map((b) => b.category))];
 
-  // Filtrar
+  // Filter
   const filteredBooks = books.filter((book) => {
     const matchesSearch =
       book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||

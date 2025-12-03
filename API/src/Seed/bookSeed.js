@@ -4,7 +4,7 @@ const Book = require("../Models/booksModel");
 
 
 // Lista de livros
-let books = [
+let seedbooks = [
   { id: 1, title: "The Hobbit", author: "J.R.R. Tolkien", category: "Fantasy", year: 1937, price: 19.99 },
   { id: 2, title: "Harry Potter and the Philosopher's Stone", author: "J.K. Rowling", category: "Fantasy", year: 1997, price: 24.99 },
   { id: 3, title: "Atomic Habits", author: "James Clear", category: "Self-Help", year: 2018, price: 17.5 },
@@ -27,7 +27,7 @@ const seedBooks = async () => {
     const books = await getAllBooksFromService();
   
     if  ( books.length == 0 ){
-  await Promise.all(books.map(book => Book.create(book))); // promisse all return  a single promisses from a list of promisses.
+  await Promise.all(seedbooks.map(book => Book.create(book))); // promisse all return  a single promisses from a list of promisses.
   console.log("📚 Books seeds loaded!"); 
 }
 };
