@@ -23,7 +23,7 @@ export function CartProvider({ children }) {
 
       setCart(res.data);
     } catch (error) {
-      console.error("Erro ao adicionar ao carrinho:", error);
+      console.error("Error in adding in Cart:", error);
     }
   };
 
