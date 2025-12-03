@@ -6,11 +6,13 @@ import HomePage from "./Pages/HomePage";
 import BookListPage from "./Pages/BookListPage";
 import CartPage from "./Pages/CartPage"; 
 import Nav from "./Components/Nav";
+import { CartProvider } from "./Context/CartContext";
 
 
 
  function App() {
   return (
+    <CartProvider>
     <BookProvider>
       <Router>
         <Nav />
@@ -21,6 +23,7 @@ import Nav from "./Components/Nav";
         </Routes>
       </Router>
     </BookProvider>
+    </CartProvider>
   );
 }
 

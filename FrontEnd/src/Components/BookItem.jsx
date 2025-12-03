@@ -1,10 +1,13 @@
 import { useContext, useState } from "react";
 import { BookContext } from "../Context/BookContext";
+import { CartContext } from "../Context/CartContext";
 
 export default function BookItem({ book }) {
-  const { addToCart, updateBook, deleteBook } = useContext(BookContext);
+  const { updateBook, deleteBook } = useContext(BookContext);
+  const { addToCart } = useContext(CartContext);
+
   const [editMode, setEditMode] = useState(false);
-  
+
   const [form, setForm] = useState({
     title: book.title,
     author: book.author,
@@ -17,7 +20,7 @@ export default function BookItem({ book }) {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
- return (
+  return (
     <div className="book-item">
       {editMode ? (
         <>
@@ -34,11 +37,7 @@ export default function BookItem({ book }) {
             value={form.category}
             onChange={handleChange}
           />
-          <input
-            name="image"
-            value={form.image}
-            onChange={handleChange}
-          />
+          <input name="image" value={form.image} onChange={handleChange} />
 
           <button
             onClick={() => {
@@ -51,7 +50,8 @@ export default function BookItem({ book }) {
 
           <button onClick={() => setEditMode(false)}>Cancel</button>
         </>
-      ) : ( // Same as if / else
+      ) : (
+        // Same as if / else
         <>
           <img
             src={book.image}
@@ -64,11 +64,14 @@ export default function BookItem({ book }) {
           <p>${book.price}</p>
           <p>Category: {book.category}</p>
 
-       <button onClick={() => {
-        console.log("Adding ro cart:", book) ;     
-         addToCart(book);
-       }}>   
-       Add to Cart </button>
+          <button
+            onClick={() => {
+              console.log("Adding ro cart:", book);
+              addToCart(book);
+            }}
+          >
+            Add to Cart{" "}
+          </button>
           <button onClick={() => setEditMode(true)}>Edit</button>
           <button onClick={() => deleteBook(book._id)}>Delete</button>
         </>

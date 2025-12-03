@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../assets/BookStoreLogo.png"
 
 export default function Nav() {
@@ -8,10 +8,13 @@ export default function Nav() {
         <img src={logo} alt="Bookstore Logo" className="logo" />
       </div>
 
+
+
      <ul className="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/books">Books</a></li>
-        <li><a href="/cart">Cart</a></li>
+        <NavLink to="/">Home</NavLink>
+      <NavLink to="/books">Books</NavLink>
+      <NavLink to="/cart">Cart</NavLink>
+              
       </ul>
     </nav>
   );

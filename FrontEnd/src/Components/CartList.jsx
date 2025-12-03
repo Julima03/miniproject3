@@ -4,6 +4,7 @@ import { BookContext } from "../Context/BookContext";
 
 export default function CartList() {
   const { cart } = useContext(BookContext);
+  console.log(cart)
 
   return (
     <div>
